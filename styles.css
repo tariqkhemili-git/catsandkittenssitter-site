@@ -45,7 +45,9 @@
 
 .center {
   display: block;
-  width: max-content;
+  width: clamp(5em, 100%, 800px);
+  padding-left: 1em;
+  height: auto;
   margin: 0 auto;
 }
 
@@ -457,7 +459,7 @@ form .submit {
 }
 
 .bottom-btn {
-  margin-bottom: 3em;
+  margin-block: 3em;
 }
 
 @media (max-width: 940px) {
