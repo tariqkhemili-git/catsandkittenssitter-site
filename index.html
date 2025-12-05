@@ -4,28 +4,358 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
     <script type="module" src="script.js"></script>
     <title>Cats and Kittens Sitter - Need a Cat Sitter? I'm your girl!</title>
-    <link
-      rel="icon"
-      href="https://catsandkittenssitter.co.uk/wp-content/uploads/2024/08/cropped-logo-blog-1.png?w=192"
-    />
+    <link rel="icon" href="assets/favicon.webp" />
   </head>
   <body>
-    <nav>
-      <img
-        src="https://catsandkittenssitter.co.uk/wp-content/uploads/2024/06/logo-blog.png"
-        alt="Cats and Kittens Sitter Logo"
-      />
-      <ul>
-        <li><a href="">About</a></li>
-        <li><a href="">Services & Pricing</a></li>
-        <li><a href="">Contact</a></li>
-        <li><a href="">New to Cat Sitting?</a></li>
-        <li><a href="">Policies & Booking Terms</a></li>
-        <li><a href="">FAQs</a></li>
-      </ul>
-      <button>Get In Touch</button>
-    </nav>
+    <div class="nav-container">
+      <nav>
+        <button class="hamburger">&#9776;</button>
+        <img src="assets/logo-blog.png" alt="Cats and Kittens Sitter Logo" />
+        <ul>
+          <li><a href="">About</a></li>
+          <li><a href="">Services & Pricing</a></li>
+          <li><a href="">Contact</a></li>
+          <li><a href="">New to Cat Sitting?</a></li>
+          <li><a href="">Policies & Booking Terms</a></li>
+          <li><a href="">FAQs</a></li>
+        </ul>
+        <button class="get-in-touch-btn display-none">Get In Touch</button>
+      </nav>
+    </div>
+    <header>
+      <h1>Need a cat sitter in London?</h1>
+      <p>
+        Leaving your cat(s) at home while you're away can be stressful but
+        <strong>Cats and Kittens Sitter</strong>, a fully insured London cat
+        sitting service, offers the purrfect solution. Your cat will receive
+        personalised care from a DBS-checked sitter, right in the comfort of
+        their own home. With us, you can travel worry-free, knowing your cat(s)
+        are in trusted hands and a familiar environment.
+      </p>
+      <button class="get-in-touch-btn">Enquire Now</button>
+    </header>
+    <main>
+      <section>
+        <h1>London Drop-In Cat Sitting Service - Daily Home Visits</h1>
+        <p>
+          Cats and Kittens Sitter is a trusted
+          <strong>drop-in cat sitting service in London</strong>,
+          <strong>offering one or more daily visits</strong> to your home to
+          ensure your cat stays comfortable, happy, and well cared for while
+          you're away. You'll receive
+          <strong>daily cat sitting updates with videos and pictures</strong>,
+          so you can stay connected and reassured wherever you are.
+        </p>
+        <p>
+          Based in East London, I cover most areas across London. Not sure if
+          your postcode is covered? Feel free to
+          <a href="">get in touch</a> with your postcode and i will get back to
+          you within 24 hours.
+        </p>
+        <p>
+          Curious what a cat sitting visit looks like? Check out my work on
+          <a href="https://www.tiktok.com/@eastldncatsitter" target="_blank"
+            >TikTok</a
+          >
+          and
+          <a href="https://www.instagram.com/eastldncatsitter/" target="_blank"
+            >Instagram</a
+          >
+          for real clips from my <strong>London cat sitting visits</strong>,
+          showing everything from cuddles and playtime to feeding routines and
+          litter care, all tailored to each cat's needs.
+        </p>
+        <p>
+          New to cat sitting or not sure what to expect?
+          <a href="">Click here</a> to learn more about how it works.
+        </p>
+        <p>
+          For details on what's included in each visit and how much it costs,
+          head to the <a href="">Services & Pricing</a> section.
+        </p>
+      </section>
+      <section>
+        <h1 class="review-heading">What Cat Parents Are Saying</h1>
+        <div class="grid">
+          <div class="review">
+            <div class="flex-stars">
+              <img src="assets/star.svg" alt="Star" class="star" />
+              <img src="assets/star.svg" alt="Star" class="star" />
+              <img src="assets/star.svg" alt="Star" class="star" />
+              <img src="assets/star.svg" alt="Star" class="star" />
+              <img src="assets/star.svg" alt="Star" class="star" />
+            </div>
+            <p>
+              “Lina was absolutely brilliant with my Lilly, followed
+              instructions to the letter sending me pics and videos from each
+              visit. I felt at ease being away (rare for me) and will be using
+              Lina again in the future. Thanks Lina”
+            </p>
+            <p>Laura Hobbs</p>
+          </div>
+          <div class="review">
+            <div class="flex-stars">
+              <img src="assets/star.svg" alt="Star" class="star" />
+              <img src="assets/star.svg" alt="Star" class="star" />
+              <img src="assets/star.svg" alt="Star" class="star" />
+              <img src="assets/star.svg" alt="Star" class="star" />
+              <img src="assets/star.svg" alt="Star" class="star" />
+            </div>
+            <p>
+              “Great experience with Lina from start to finish. The cat care
+              itself was 10 out of 10 – regular text, photo and video updates of
+              visits plus genuine care for our cat who seemed to have a great
+              time without us! Everything was left clean and tidy when we got
+              home, with keys etc safely returned. Thanks Lina!”
+            </p>
+            <p>Rachel Foster</p>
+          </div>
+          <div class="review">
+            <div class="flex-stars">
+              <img src="assets/star.svg" alt="Star" class="star" />
+              <img src="assets/star.svg" alt="Star" class="star" />
+              <img src="assets/star.svg" alt="Star" class="star" />
+              <img src="assets/star.svg" alt="Star" class="star" />
+              <img src="assets/star.svg" alt="Star" class="star" />
+            </div>
+            <p>
+              “Lina is very responsive and did everything we agreed with. She
+              also kept me posted on any update of DaFu and send photo and video
+              of her. She also helped me to fixed the camera. Highly
+              recommended!”
+            </p>
+            <p>Chengyan Z</p>
+          </div>
+        </div>
+        <div class="reviews-btn-container">
+          <a href="https://g.co/kgs/iNRkeuC" target="_blank" class="reviews-btn"
+            >See more 5-star reviews on Google</a
+          >
+        </div>
+        <div class="client-container">
+          <h1>A Few of My Cat Clients</h1>
+          <div class="gallery-container">
+            <img
+              src="assets/oliver.jpeg"
+              alt="Oliver the cat, ginger and white"
+              class="gallery-img"
+              id="cat1"
+            /><img
+              src="assets/zizi.jpeg"
+              alt="Zizi the cat, black and white"
+              class="gallery-img hidden-img"
+              id="cat2"
+            /><img
+              src="assets/nancy.jpeg"
+              alt="Nancy the cat, black"
+              class="gallery-img hidden-img"
+              id="cat3"
+            /><img
+              src="assets/sophia.jpeg"
+              alt="Sophia the cat, tabby"
+              class="gallery-img hidden-img"
+              id="cat4"
+            /><img
+              src="assets/mr-onions.jpeg"
+              alt="Mr. Onions the cat, tabby"
+              class="gallery-img hidden-img"
+              id="cat5"
+            /><img
+              src="assets/dafu.jpeg"
+              alt="DaFu the cat, white"
+              class="gallery-img hidden-img"
+              id="cat6"
+            /><img
+              src="assets/bertie.jpeg"
+              alt="Bertie the cat, "
+              class="gallery-img hidden-img"
+              id="cat7"
+            />
+            <div class="gallery-caption">Meet Oliver</div>
+            <button class="gallery-arrow gallery-left-arrow">⬅</button>
+            <button class="gallery-arrow gallery-right-arrow">➡</button>
+            <div id="gallery-index">1 / 7</div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="contact-us-section">
+          <h1>Contact us</h1>
+          <p>
+            <strong
+              >Hi! I'm Lina, a London-based cat sitter offering drop-in visits
+              across the city.</strong
+            >
+            <span class="block"
+              >If you’re ready to book or just want to ask a few questions, feel
+              free to fill out the form below and I’ll get back to you within 24
+              hours.</span
+            >
+          </p>
+          <p>
+            Not sure of your dates yet or just want to chat? Message me on
+            WhatsApp, send an email, or reach out via Instagram or TikTok. I’m
+            always happy to help!
+          </p>
+          <p>
+            <a href="mailto:catsandkittenssitter@gmail.com" class="block"
+              >catsandkittenssitter@gmail.com</a
+            >
+          </p>
+          <a
+            class="whatsapp-btn"
+            href="https://api.whatsapp.com/send?phone=447459903472&text=Hi!%20I%20got%20your%20number%20from%20your%20website%20and%20I%E2%80%99m%20interested%20in%20booking%20cat%20sitting%20with%20you."
+          >
+            <img
+              src="assets/whatsapp.svg"
+              alt="WhatsApp Logo"
+              class="whatsapp-img"
+            />
+            Chat on Whatsapp
+          </a>
+        </div>
+        <div class="booking-enquiry-section">
+          <h1>Make a Booking Enquiry</h1>
+          <form action="">
+            <div class="form-container">
+              <label for="full-name"
+                >Full name<span class="color-red margin-2px">*</span></label
+              ><input
+                type="text"
+                id="full-name"
+                class="input"
+                placeholder="Jane Doe"
+              />
+              <label for="email"
+                >Email<span class="color-red margin-2px">*</span></label
+              ><input
+                type="email"
+                id="email"
+                class="input"
+                placeholder="janedoe@example.com"
+              />
+              <label for="tel"
+                >Phone number<span class="color-red margin-2px">*</span></label
+              ><input
+                type="tel"
+                id="tel"
+                class="input"
+                placeholder="+44 7459 903472"
+                required
+              />
+              <label for="postcode"
+                >Full Postcode<span class="color-red margin-2px">*</span></label
+              >
+              <input
+                type="text"
+                id="postcode"
+                class="input"
+                placeholder="E14 5DL"
+                required
+              />
+              <label for="cat-num"
+                >Number of Cats<span class="color-red margin-2px"
+                  >*</span
+                ></label
+              >
+              <input
+                type="number"
+                id="cat-num"
+                class="input"
+                placeholder="1? 2? 3?"
+                required
+              />
+              <label for="start-date"
+                >Start Date<span class="color-red margin-2px">*</span></label
+              >
+              <input type="date" id="start-date" class="input" required />
+              <label for="end-date"
+                >End Date<span class="color-red margin-2px">*</span></label
+              >
+              <input type="date" id="end-date" class="input" required />
+              <label for="visits-per-day"
+                >Number of visits per day<span class="color-red margin-2px"
+                  >*</span
+                ></label
+              >
+              <input
+                type="number"
+                id="visits-per-day"
+                class="input"
+                placeholder="1? 2? 3?"
+                required
+              />
+              <label for="time-slots">Preferred time slots</label>
+              <input
+                type="text"
+                id="time-slots"
+                class="input"
+                placeholder="Morning/Afternoon/Evening/No Preference"
+              />
+              <label for="message">Message</label>
+              <textarea
+                name="message"
+                id="message"
+                class="input message-input"
+              ></textarea>
+              <label for="how-hear"
+                >How did you hear about me?<span class="color-red margin-2px"
+                  >*</span
+                ></label
+              ><input type="text" id="how-hear" class="input" />
+              <button type="submit" class="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </section>
+      <section>
+        <h1>Behind the Scenes of a London Cat Sitter</h1>
+        <blockquote
+          class="tiktok-embed"
+          cite="https://www.tiktok.com/@eastldncatsitter"
+          data-unique-id="eastldncatsitter"
+          data-embed-type="creator"
+          style="max-width: 780px; min-width: 288px; border-radius: 20px"
+        >
+          <section>
+            <a
+              target="_blank"
+              href="https://www.tiktok.com/@eastldncatsitter?refer=creator_embed"
+              >@eastldncatsitter</a
+            >
+          </section>
+        </blockquote>
+        <script async src="https://www.tiktok.com/embed.js"></script>
+      </section>
+      <footer>
+        <div class="nav-container">
+          <nav>
+            <button class="hamburger">&#9776;</button>
+            <img
+              src="assets/logo-blog.png"
+              alt="Cats and Kittens Sitter Logo"
+            />
+            <p>© 2025 CatsAndKittensSitter. All rights reserved.</p>
+            <ul>
+              <li><a href="">About</a></li>
+              <li><a href="">Services & Pricing</a></li>
+              <li><a href="">Contact</a></li>
+              <li><a href="">New to Cat Sitting?</a></li>
+              <li><a href="">Policies & Booking Terms</a></li>
+              <li><a href="">FAQs</a></li>
+            </ul>
+            <button class="get-in-touch-btn display-none">Get In Touch</button>
+          </nav>
+        </div>
+      </footer>
+    </main>
   </body>
 </html>
