@@ -442,19 +442,21 @@ form .submit {
 }
 
 .short-visit {
-  background-color: #181a1b;
+  background-color: hsl(200, 6%, 50%);
 }
 
 .short-visit .get-in-touch-btn {
-  background-color: #302e21;
+  background-color: hsl(52, 19%, 50%);
+  color: #000;
 }
 
 .long-visit .get-in-touch-btn {
-  background-color: #181a1b;
+  background-color: hsl(200, 6%, 50%);
+  color: #000;
 }
 
 .long-visit {
-  background-color: #302e21;
+  background-color: hsl(52, 19%, 50%);
 }
 
 .package-list {
@@ -478,6 +480,8 @@ form .submit {
 
 .bottom-btn {
   margin-block: 3em;
+  color: #000;
+  background-color: hsl(52, 19%, 50%);
 }
 
 @media (max-width: 940px) {
