@@ -1,5 +1,7 @@
 :root {
   --accent-color: hsl(52, 19%, 50%);
+  --nav-bg: rgb(21, 21, 19);
+  --bg: rgb(13, 13, 13);
 }
 
 .hidden-img {
@@ -49,6 +51,10 @@
   padding-left: 1em;
   height: auto;
   margin: 0 auto;
+}
+
+.display-none-hamburger {
+  visibility: hidden;
 }
 
 *,
@@ -513,11 +519,32 @@ form .submit {
 
   .hamburger {
     display: flex;
+    position: relative;
   }
 
-  .hamburger:hover,
-  .hamburger:active,
-  .hamburger:focus {
+  .hamburger-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    background-color: var(--nav-bg);
+    border-radius: 10px;
+    height: auto;
+    width: 90vw;
+    z-index: 9999;
+    padding: 1em;
+  }
+
+  .hamburger-item {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .hamburger-item:hover,
+  .hamburger-item:active,
+  .hamburger-item:focus {
     text-shadow: #fff 0 2px 5px;
   }
 
