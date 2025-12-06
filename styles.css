@@ -175,6 +175,10 @@ header .get-in-touch-btn {
   padding: 1.5em 3em;
 }
 
+li {
+  padding-top: 10px;
+}
+
 header {
   display: flex;
   flex-direction: column;
