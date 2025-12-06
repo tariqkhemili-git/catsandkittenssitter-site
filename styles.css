@@ -12,8 +12,16 @@
   display: none;
 }
 
+.margin-top-1 {
+  margin-top: 1em;
+}
+
 .block {
   display: block;
+}
+
+.margin-inline-1 {
+  margin-inline: 1em;
 }
 
 .small-text {
@@ -216,6 +224,12 @@ section h1 {
 
 section h2 {
   font-size: clamp(1em, 3vw, 2em);
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+section h4 {
+  font-size: 1.5rem;
   margin-bottom: 0.5em;
   text-align: center;
 }
@@ -427,6 +441,12 @@ form .submit {
   display: block;
   margin: 1em;
   padding-inline: clamp(1em, 25%, 25em);
+}
+
+.center-div {
+  display: block;
+  margin: 0 auto;
+  width: max-content;
 }
 
 .checkbox-group label {
