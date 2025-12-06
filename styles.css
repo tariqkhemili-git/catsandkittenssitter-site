@@ -45,6 +45,10 @@
   text-align: center;
 }
 
+.padding-bottom {
+  padding-bottom: 2em;
+}
+
 .center {
   display: block;
   width: clamp(5em, 100%, 800px);
@@ -193,6 +197,11 @@ section:nth-child(2n) {
   color: #000;
   background-color: #d9d7c7;
   padding-block: 1em;
+}
+
+.not-inverse {
+  color: #d9d7c7;
+  background-color: var(--bg);
 }
 
 section h1 {
@@ -491,6 +500,23 @@ form .submit {
 .bottom-btn {
   margin-block: 3em;
   background-color: hsl(52, 19%, 50%);
+}
+
+.minu-img {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: #d9d7c7 0 0 5px;
+}
+
+.about-container {
+  font-size: 0.9rem;
+}
+
+.about-h1 {
+  padding-top: 0;
+  margin-top: 0;
 }
 
 @media (max-width: 940px) {
