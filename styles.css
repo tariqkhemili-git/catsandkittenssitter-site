@@ -57,6 +57,10 @@
   visibility: hidden;
 }
 
+.underline {
+  border-bottom: #d9d7c7 2px solid;
+}
+
 *,
 *::before,
 *::after {
