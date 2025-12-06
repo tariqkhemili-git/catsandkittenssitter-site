@@ -2,13 +2,7 @@ const hamburgerBtn = document.getElementById("hamburger");
 const hamburgerMenu = document.getElementById("hamburger-menu");
 
 hamburgerBtn.addEventListener("click", () => {
-  if (hamburgerMenu.style.visibility === "visible") {
-    // If it's currently visible, hide it
-    hamburgerMenu.style.visibility = "hidden";
-  } else {
-    // If it's currently hidden, show it
-    hamburgerMenu.style.visibility = "visible";
-  }
+  hamburgerMenu.classList.toggle("display-none-hamburger");
 });
 
 function createImageGallery(containerSelector) {
