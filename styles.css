@@ -234,8 +234,8 @@ section a {
   text-decoration: underline;
 }
 
-section p a:hover,
-section p a:focus {
+section a:hover,
+section a:focus {
   color: #fff;
   text-shadow: #fff 0 0 5px;
 }
