@@ -1,31 +1,37 @@
 :root {
-  /* --- NEW PALETTE --- */
-  --color-tan: #c7b8a2;
-  --color-cream: #ede9e3;
-  --color-brown: #8b7765;
-  --color-grey-dark: #4a4a47;
-  --color-black-soft: #2a2a29;
+  /* --- Brand & Text Colors --- */
+  --color-accent-cream: hsl(41, 20%, 84%); /* Previously --accent-color */
+  --color-accent-cream-dark: hsl(
+    41,
+    20%,
+    100%
+  ); /* Hover state for gold buttons */
+  --color-accent-cream-darker: #5b573e; /* Active/Hover state for arrows */
+  --color-accent-blue: hsl(200, 6%, 50%); /* Used in pricing cards */
+  --color-text-beige: #d9d7c7; /* Main text color / Alternating BG */
+  --color-white: #z;
+  --color-black: #000000;
+  --color-red: red;
+  --color-whatsapp: #25d366;
 
-  /* --- SEMANTIC VARIABLES --- */
-  --bg-primary: var(--color-black-soft);
-  --bg-secondary: var(--color-cream); /* For "light" sections */
-  --bg-tertiary: var(--color-grey-dark); /* For forms, cards, nav */
+  /* --- Backgrounds --- */
+  --color-bg-dark: #0d0d0d; /* Previously --bg / rgb(13,13,13) */
+  --color-bg-nav: #151513; /* Previously --nav-bg / rgb(21,21,19) */
+  --color-bg-input: #ffffffd0; /* Semi-transparent white for inputs */
+  --nth-section: #ccccca;
 
-  --nav-bg: var(--color-black-soft);
-
-  --text-main: var(--color-cream);
-  --text-inverse: var(--color-black-soft); /* Text on light backgrounds */
-
-  --accent-color: var(--color-brown);
-  --accent-hover: var(--color-tan);
-  --accent-text: var(--color-black-soft); /* Text color inside accent buttons */
-
-  /* Functional Colors */
-  --color-warning: #ff4d4d; /* Softened red */
-  --color-whatsapp: #25d366; /* Kept brand identity */
+  /* --- Shadows & Overlays --- */
+  --shadow-black: rgba(0, 0, 0, 0.5); /* Standard drop shadow */
+  --shadow-black-strong: #000000aa; /* Inset shadow */
+  --shadow-white-glow: #ffffff55; /* Button glow */
+  --overlay-black-caption: #0000008d; /* Gallery caption background */
+  --text-shadow-light: rgba(
+    255,
+    255,
+    255,
+    0.755
+  ); /* Text shadow for captions */
 }
-
-/* --- UTILITY CLASSES --- */
 
 .hidden-img {
   display: none;
@@ -56,12 +62,20 @@
 }
 
 .color-red {
-  color: var(--color-warning);
-  text-shadow: var(--color-warning) 0 0 5px;
+  color: var(--color-red);
+  text-shadow: var(--color-red) 0 0 5px;
 }
 
 .margin-2px {
   margin: 2px;
+}
+
+.padding-top-1 {
+  padding-top: 1em;
+}
+
+.margin-bottom-0 {
+  margin-bottom: 0;
 }
 
 .padding-bottom-0 {
@@ -110,19 +124,16 @@ html,
 body {
   margin: 0;
   font-family: "Sora", sans-serif;
-  background-color: var(--bg-primary);
-  color: var(--text-main);
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-beige);
 }
 
-/* --- NAVIGATION --- */
-
 .nav-container {
-  background-color: var(--nav-bg);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: var(--color-bg-nav);
+  box-shadow: 0 2px 4px var(--shadow-black);
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid var(--color-grey-dark);
 }
 
 nav {
@@ -153,7 +164,7 @@ nav ul {
 
 nav ul a {
   text-decoration: none;
-  color: var(--text-main);
+  color: var(--color-text-beige);
   font-weight: bold;
 }
 
@@ -163,7 +174,7 @@ nav ul a {
   border: none;
   background: transparent;
   font-size: 2rem;
-  color: var(--text-main);
+  color: var(--color-white);
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
@@ -173,21 +184,18 @@ nav ul a {
   border: none;
 }
 
-/* --- BUTTONS --- */
-
 .get-in-touch-btn {
   padding: 1em 2em;
   font-size: 1.2rem;
   border: none;
   outline: transparent;
-  background-color: var(--accent-color);
-  color: var(--accent-text); /* Dark text for contrast against Brown */
-  font-weight: 700;
+  background-color: var(--color-accent-cream);
+  color: var(--color-black);
+  font-weight: 600;
   cursor: pointer;
   border-radius: 8px;
   text-decoration: none;
   text-align: center;
-  transition: background-color 0.3s ease;
 }
 
 .get-in-touch-btn:hover,
@@ -196,9 +204,9 @@ nav ul a {
 .reviews-btn:focus,
 form .submit:hover,
 form .submit:focus {
-  background-color: var(--accent-hover);
-  color: var(--color-black-soft);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  background-color: var(--color-accent-cream-dark);
+  box-shadow: inset 0 0 10px var(--shadow-black-strong);
+  box-shadow: 0 0 10px var(--shadow-white-glow);
 }
 
 nav .get-in-touch-btn {
@@ -210,14 +218,14 @@ header .get-in-touch-btn {
   padding: 1.5em 3em;
 }
 
-/* --- LIST STYLES --- */
+/* --- UPDATED LIST STYLES START --- */
 li {
   padding-top: 10px;
+  /* Ensure words break to avoid overflow */
   overflow-wrap: break-word;
   max-width: 75vw;
 }
-
-/* --- HEADER --- */
+/* --- UPDATED LIST STYLES END --- */
 
 header {
   display: flex;
@@ -226,12 +234,10 @@ header {
   align-items: center;
   width: 100%;
   height: 80vh;
-  color: #fff;
+  color: var(--color-white);
   text-align: center;
-  text-shadow: #000 0 2px 2px;
+  text-shadow: var(--color-black) 0 2px 2px;
   padding: 2em 1em;
-  /* Note: Ensure this image works with the new colour scheme, 
-     or consider adding an overlay if it's too bright */
   background: url(assets/minu-dark.jpg) no-repeat center center/cover;
 }
 
@@ -247,23 +253,19 @@ header p {
   line-height: 1.5;
 }
 
-/* --- SECTIONS --- */
-
 section {
-  color: var(--text-main);
+  color: var(--color-text-beige);
 }
 
-/* This is the "Light" section logic */
 section:nth-child(2n) {
-  color: var(--text-inverse);
-  background-color: var(--bg-secondary);
+  color: var(--color-black);
+  background-color: var(--nth-section);
   padding-block: 1em;
 }
 
-/* Force dark theme logic */
 .not-inverse {
-  color: var(--text-main);
-  background-color: var(--bg-primary);
+  color: var(--color-text-beige);
+  background-color: var(--color-bg-dark);
 }
 
 section h1 {
@@ -293,22 +295,20 @@ section p {
 }
 
 section a {
-  color: inherit; /* Adapts to dark or light sections */
+  color: var(--color-text-beige);
   font-weight: bold;
   text-decoration: underline;
 }
 
 section a:hover,
 section a:focus {
-  color: var(--accent-hover);
-  text-shadow: none;
+  color: var(--color-white);
+  text-shadow: var(--color-white) 0 0 5px;
 }
 
 .review-heading {
   margin-top: 1em;
 }
-
-/* --- REVIEWS --- */
 
 .grid {
   display: grid;
@@ -323,8 +323,7 @@ section a:focus {
 
 .star {
   width: 20px;
-  /* Make stars match the accent color */
-  filter: sepia(1) saturate(1) hue-rotate(-30deg) brightness(1.2);
+  filter: brightness(0);
 }
 
 .email-link {
@@ -342,14 +341,11 @@ section a:focus {
   border: transparent;
   outline: transparent;
   border-radius: 6px;
-  background-color: var(--accent-color);
-  color: var(--accent-text);
+  background-color: var(--color-accent-cream);
+  color: var(--color-white);
   padding: 2em 4em;
   text-decoration: none;
-  font-weight: bold;
 }
-
-/* --- GALLERY --- */
 
 .gallery-container {
   display: block;
@@ -371,23 +367,23 @@ section a:focus {
   padding: 0;
   border: none;
   outline: transparent;
-  background-color: var(--accent-color);
+  background-color: var(--color-accent-cream);
   width: 50px;
   height: 50px;
-  color: #fff;
+  color: var(--color-white);
   top: 50%;
   cursor: pointer;
 }
 
 .gallery-arrow img {
   width: 30px;
-  filter: invert(); /* Keeps arrow icon white */
+  filter: invert();
   opacity: 0.8;
 }
 
 .gallery-arrow:hover,
 .gallery-arrow:active {
-  background-color: var(--accent-hover);
+  background-color: var(--color-accent-cream-darker);
 }
 
 .gallery-caption {
@@ -398,14 +394,9 @@ section a:focus {
   bottom: 4px;
   width: 100%;
   height: 10%;
-  background-color: rgba(
-    42,
-    42,
-    41,
-    0.8
-  ); /* Using new dark color with opacity */
-  color: var(--text-main);
-  text-shadow: rgba(0, 0, 0, 0.7) 0 0 5px;
+  background-color: var(--overlay-black-caption);
+  color: var(--color-text-beige);
+  text-shadow: var(--text-shadow-light) 0 0 5px;
 }
 
 .gallery-left-arrow {
@@ -420,8 +411,6 @@ section a:focus {
   position: absolute;
 }
 
-/* --- CONTACT / FORMS --- */
-
 .contact-us-section,
 .booking-enquiry-section {
   margin: 1em;
@@ -432,6 +421,7 @@ section a:focus {
   text-align: center;
 }
 
+/* Override paragraph layout inside the contact-us section */
 .contact-us-section p {
   max-width: none;
   margin: 0 0 1.5em 0;
@@ -446,8 +436,8 @@ section a:focus {
   padding: 1em 2em;
   margin-left: 0;
   border-radius: 10px;
-  color: #fff;
-  text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
+  color: var(--color-white);
+  text-shadow: var(--color-white) 0 2px 5px;
   text-decoration: none;
 }
 
@@ -456,10 +446,9 @@ section a:focus {
 }
 
 .form-container {
-  background-color: var(--bg-tertiary); /* Replaces #000 */
+  background-color: var(--color-black);
   border-radius: 20px;
   padding: 3em;
-  border: 1px solid var(--color-tan);
 }
 
 form .input,
@@ -469,28 +458,15 @@ form label {
   margin: 0 auto;
 }
 
-/* Labels inside form need to contrast against the dark grey form bg */
-form label {
-  color: var(--text-main);
-  margin-bottom: 0.5em;
-  margin-top: 1em;
-}
-
 form .input {
   display: block;
-  margin-block: 0.5em;
+  margin-block: 1em;
   padding: 0.5em 1em 0.5em 0.5em;
   width: 50%;
   font-size: 1rem;
-  background-color: var(--bg-secondary); /* Cream input background */
-  color: var(--text-inverse); /* Dark text inside input */
+  background-color: var(--color-bg-input);
   border-radius: 10px;
   text-align: start;
-  border: none;
-}
-
-form .input::placeholder {
-  color: #888;
 }
 
 .message-input {
@@ -506,8 +482,8 @@ form .submit {
   font-size: 1.2rem;
   border: none;
   outline: transparent;
-  background-color: var(--accent-color);
-  color: var(--accent-text);
+  background-color: var(--color-accent-cream);
+  color: var(--color-white);
   font-weight: 600;
   cursor: pointer;
   border-radius: 8px;
@@ -542,8 +518,6 @@ form .submit {
   transform: translateY(0);
 }
 
-/* --- FAQ --- */
-
 .faq {
   display: block;
   margin: 0 auto;
@@ -555,9 +529,8 @@ form .submit {
   font-size: 2rem;
   list-style: none;
   padding-bottom: 20px;
-  border-bottom: var(--color-tan) 2px solid;
+  border-bottom: var(--color-text-beige) 2px solid;
   max-width: 90vw;
-  cursor: pointer;
 }
 
 .faq-question img {
@@ -565,7 +538,7 @@ form .submit {
   border-radius: 10px;
   margin: 1em auto;
   width: clamp(5em, 50%, 20em);
-  box-shadow: var(--color-tan) 0 0 10px;
+  box-shadow: var(--color-text-beige) 0 0 10px;
 }
 
 .faq-question .whatsapp-img {
@@ -591,34 +564,32 @@ form .submit {
   margin: 1em;
 }
 
-/* --- PRICING CARDS --- */
-
 .short-visit,
 .long-visit {
   border-radius: 24px;
   padding: 2em;
-  color: var(--text-main);
 }
 
 .short-visit {
-  background-color: var(--bg-tertiary); /* Dark Grey */
-  border: 1px solid var(--color-tan);
+  background-color: var(--color-accent-blue);
 }
 
-.long-visit {
-  background-color: var(--accent-color); /* Brown */
-  color: var(--accent-text); /* Dark text on Brown card */
+.short-visit .get-in-touch-btn,
+.long-visit .get-in-touch-btn {
+  color: var(--color-black);
+  display: inline-block;
 }
 
 .short-visit .get-in-touch-btn {
-  background-color: var(--accent-color);
-  color: var(--accent-text);
+  background-color: var(--color-accent-cream);
 }
 
 .long-visit .get-in-touch-btn {
-  background-color: var(--bg-tertiary);
-  color: var(--text-main);
-  box-shadow: none;
+  background-color: var(--color-accent-blue);
+}
+
+.long-visit {
+  background-color: var(--color-accent-cream);
 }
 
 .package-list {
@@ -642,7 +613,7 @@ form .submit {
 
 .bottom-btn {
   margin-block: 3em;
-  background-color: var(--accent-color);
+  background-color: var(--color-accent-cream);
   width: max-content;
 }
 
@@ -651,7 +622,7 @@ form .submit {
   display: block;
   margin: 0 auto;
   border-radius: 10px;
-  box-shadow: var(--color-tan) 0 0 5px;
+  box-shadow: var(--color-text-beige) 0 0 5px;
 }
 
 .about-container {
@@ -670,12 +641,12 @@ form .submit {
 
 .not-for-job-app span {
   font-weight: 1000;
-  border-bottom: var(--color-tan) 2px solid;
+  border-bottom: var(--color-text-beige) 2px solid;
 }
 
 .enquiry-form-h1 {
   margin-top: 0;
-  border-bottom: var(--color-tan) 2px solid;
+  border-bottom: var(--color-text-beige) 2px solid;
   padding-bottom: 1em;
 }
 
@@ -693,13 +664,11 @@ details details {
   margin: 1em auto;
   text-align: center;
   font-size: 1rem;
-  border: var(--color-tan) 2px solid;
+  border: var(--color-text-beige) 2px solid;
   border-radius: 10px;
+  /* list-style: none; */
   padding: 1em 2em;
-  cursor: pointer;
 }
-
-/* --- MEDIA QUERIES --- */
 
 @media (max-width: 940px) {
   nav ul {
@@ -714,6 +683,7 @@ details details {
     align-items: center;
     height: auto;
     padding: 1em;
+    /* Added relative position so the menu sticks to the nav bar */
     position: relative;
   }
 
@@ -737,32 +707,31 @@ details details {
 
   .hamburger-menu {
     position: absolute;
+    /* Adjusted top to match nav height approx */
     top: 100%;
     left: 0;
     display: flex;
     flex-direction: column;
     gap: 0.5em;
-    background-color: var(--nav-bg);
+    background-color: var(--color-bg-nav);
     height: auto;
-    width: 100%;
+    width: 100%; /* Changed from 90vw to full width of nav */
     z-index: 9999;
     padding: 1em;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
     opacity: 1;
     visibility: visible;
-    border-bottom: 1px solid var(--color-tan);
   }
 
   .hamburger-item {
     text-decoration: none;
-    color: var(--text-main);
+    color: var(--color-white);
   }
 
   .hamburger-item:hover,
   .hamburger-item:active,
   .hamburger-item:focus {
-    color: var(--accent-hover);
-    text-shadow: none;
+    text-shadow: var(--color-white) 0 2px 5px;
   }
 
   footer .hamburger {
@@ -811,20 +780,24 @@ details details {
     padding-inline: 0;
   }
 
+  /* --- UPDATED MOBILE LIST FIXES START --- */
+  /* This ensures lists align left on mobile even inside centred containers */
   .center ul,
   .center-div ul {
     text-align: left;
-    padding-left: 1.5em;
+    padding-left: 1.5em; /* Gives space for bullets */
     margin: 0 auto;
-    width: 90vw;
+    width: 90vw; /* Prevents text hitting edges */
   }
 
   .center ul li,
   .center-div ul li {
-    padding-bottom: 0.5em;
+    padding-bottom: 0.5em; /* Spacing between policy items */
   }
+  /* --- UPDATED MOBILE LIST FIXES END --- */
 }
 
+/* IMPORTANT: This MUST be at the very bottom to override the visibility logic above */
 .display-none-hamburger {
   visibility: hidden;
   opacity: 0;
