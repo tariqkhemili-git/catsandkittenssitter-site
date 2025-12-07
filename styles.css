@@ -1,18 +1,15 @@
 :root {
   /* --- Brand & Text Colors --- */
-  --color-accent-cream: hsl(41, 20%, 84%); /* Previously --accent-color */
-  --color-accent-cream-dark: hsl(
-    41,
-    20%,
-    100%
-  ); /* Hover state for gold buttons */
+  --color-accent-cream: #ded9ce; /* Previously --accent-color */
+  --color-accent-cream-dark: #ffffff; /* Hover state for gold buttons */
   --color-accent-cream-darker: #5b573e; /* Active/Hover state for arrows */
-  --color-accent-blue: hsl(200, 6%, 50%); /* Used in pricing cards */
+  --color-accent-blue: #788287; /* Used in pricing cards */
   --color-text-beige: #d9d7c7; /* Main text color / Alternating BG */
-  --color-white: #z;
+  --color-white: #ffffff;
   --color-black: #000000;
   --color-red: red;
   --color-whatsapp: #25d366;
+  --muted-gray: #a39f9c;
 
   /* --- Backgrounds --- */
   --color-bg-dark: #0d0d0d; /* Previously --bg / rgb(13,13,13) */
@@ -25,12 +22,7 @@
   --shadow-black-strong: #000000aa; /* Inset shadow */
   --shadow-white-glow: #ffffff55; /* Button glow */
   --overlay-black-caption: #0000008d; /* Gallery caption background */
-  --text-shadow-light: rgba(
-    255,
-    255,
-    255,
-    0.755
-  ); /* Text shadow for captions */
+  --text-shadow-light: #ffffffc1; /* Text shadow for captions */
 }
 
 .hidden-img {
@@ -148,7 +140,7 @@ nav {
 nav img {
   height: 80px;
   align-self: center;
-  margin-top: 1rem;
+  margin-top: 1em;
 }
 
 nav ul {
@@ -196,6 +188,7 @@ nav ul a {
   border-radius: 8px;
   text-decoration: none;
   text-align: center;
+  text-shadow: none;
 }
 
 .get-in-touch-btn:hover,
@@ -207,6 +200,7 @@ form .submit:focus {
   background-color: var(--color-accent-cream-dark);
   box-shadow: inset 0 0 10px var(--shadow-black-strong);
   box-shadow: 0 0 10px var(--shadow-white-glow);
+  color: var(--color-black);
 }
 
 nav .get-in-touch-btn {
@@ -341,7 +335,7 @@ section a:focus {
   border: transparent;
   outline: transparent;
   border-radius: 6px;
-  background-color: var(--color-accent-cream);
+  background-color: var(--color-black);
   color: var(--color-white);
   padding: 2em 4em;
   text-decoration: none;
@@ -367,7 +361,7 @@ section a:focus {
   padding: 0;
   border: none;
   outline: transparent;
-  background-color: var(--color-accent-cream);
+  background-color: var(--color-black);
   width: 50px;
   height: 50px;
   color: var(--color-white);
@@ -383,7 +377,7 @@ section a:focus {
 
 .gallery-arrow:hover,
 .gallery-arrow:active {
-  background-color: var(--color-accent-cream-darker);
+  background-color: var(--color-bg-nav);
 }
 
 .gallery-caption {
@@ -433,7 +427,7 @@ section a:focus {
   align-items: center;
   gap: 20px;
   background-color: var(--color-whatsapp);
-  padding: 1em 2em;
+  padding: 0.5em 2em;
   margin-left: 0;
   border-radius: 10px;
   color: var(--color-white);
@@ -482,8 +476,8 @@ form .submit {
   font-size: 1.2rem;
   border: none;
   outline: transparent;
-  background-color: var(--color-accent-cream);
-  color: var(--color-white);
+  background-color: var(--color-white);
+  color: var(--color-black);
   font-weight: 600;
   cursor: pointer;
   border-radius: 8px;
@@ -581,7 +575,7 @@ form .submit {
 }
 
 .short-visit .get-in-touch-btn {
-  background-color: var(--color-accent-cream);
+  background-color: var(--muted-gray);
 }
 
 .long-visit .get-in-touch-btn {
@@ -589,7 +583,7 @@ form .submit {
 }
 
 .long-visit {
-  background-color: var(--color-accent-cream);
+  background-color: var(--muted-gray);
 }
 
 .package-list {
@@ -773,9 +767,6 @@ details details {
     width: 100%;
   }
 
-  .reviews-btn {
-    margin-inline: 2em;
-  }
   .checkbox-group {
     padding-inline: 0;
   }
@@ -800,5 +791,6 @@ details details {
 /* IMPORTANT: This MUST be at the very bottom to override the visibility logic above */
 .display-none-hamburger {
   visibility: hidden;
+  position: absolute;
   opacity: 0;
 }

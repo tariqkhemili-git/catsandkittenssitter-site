@@ -62,6 +62,7 @@
           the following terms to ensure a smooth and seamless experience. Thank
           you!
         </p>
+        <p>By booking, you are agreeing to these terms and conditions.</p>
         <h4>1. Booking Procedures</h4>
         <p>
           When scheduling a service, you may select your preferred time slot;
@@ -212,7 +213,7 @@
           <ul>
             <li>
               Content will only feature your cat(s) and will never include
-              personal information such as names, addresses, faces, or
+              personal information such as client's names, addresses, faces, or
               identifiable features of your home.
             </li>
             <li>
@@ -254,7 +255,7 @@
           </a>
         </div>
         <h1>Enquiry Form</h1>
-        <form action="" class="margin-top-1">
+        <form action="">
           <div class="form-container">
             <label for="full-name"
               >Full name<span class="color-red margin-2px">*</span></label
@@ -333,7 +334,22 @@
                 ><input type="checkbox" value="none" /> No Preference</label
               >
             </div>
+            <label for="visit-lengths"
+              >Which visit length?<span class="color-red margin-2px"
+                >*</span
+              ></label
+            >
 
+            <div id="visit-lengths" class="checkbox-group">
+              <label
+                ><input type="checkbox" value="standard" required /> Standard
+                visit - 20-25 mins</label
+              >
+              <label
+                ><input type="checkbox" value="extended" required /> Extended
+                visit - 40-45 mins</label
+              >
+            </div>
             <label for="message">Message</label>
             <textarea
               name="message"
@@ -345,6 +361,7 @@
                 >*</span
               ></label
             ><input type="text" id="how-hear" class="input" />
+
             <button type="submit" class="submit">Submit</button>
           </div>
         </form>

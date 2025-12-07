@@ -204,7 +204,22 @@
                     ><input type="checkbox" value="none" /> No Preference</label
                   >
                 </div>
+                <label for="visit-lengths"
+                  >Which visit length?<span class="color-red margin-2px"
+                    >*</span
+                  ></label
+                >
 
+                <div id="visit-lengths" class="checkbox-group">
+                  <label
+                    ><input type="checkbox" value="standard" required />
+                    Standard visit - 20-25 mins</label
+                  >
+                  <label
+                    ><input type="checkbox" value="extended" required />
+                    Extended visit - 40-45 mins</label
+                  >
+                </div>
                 <label for="message">Message</label>
                 <textarea
                   name="message"
@@ -216,6 +231,7 @@
                     >*</span
                   ></label
                 ><input type="text" id="how-hear" class="input" />
+
                 <button type="submit" class="submit">Submit</button>
               </div>
             </form>
