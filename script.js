@@ -28,6 +28,88 @@
 const getDateString = (date) => date.toISOString().split("T")[0];
 
 /**
+ * Trims leading/trailing whitespace from common text inputs.
+ * Keeps UX identical while preventing accidental spaces breaking validation.
+ * @param {HTMLFormElement} form - The form being submitted
+ */
+const sanitizeTextInputs = (form) => {
+  const fieldsToTrim = [
+    "full-name",
+    "email",
+    "postcode",
+    "how-hear",
+    "message",
+  ];
+  fieldsToTrim.forEach((id) => {
+    const el = form.querySelector(`#${id}`);
+    if (el && typeof el.value === "string") {
+      el.value = el.value.trim();
+    }
+  });
+};
+
+/**
+ * Ensures there is a reusable inline status element per form.
+ * Used for success/error feedback without modal alerts.
+ * @param {HTMLFormElement} form - The form to attach status to
+ * @returns {HTMLElement} The status element
+ */
+const getOrCreateStatusEl = (form) => {
+  let statusEl = form.querySelector(".form-status");
+  if (!statusEl) {
+    statusEl = document.createElement("div");
+    statusEl.className = "form-status";
+    statusEl.setAttribute("role", "status");
+    statusEl.style.marginTop = "1em";
+    statusEl.style.fontSize = "0.95rem";
+    statusEl.style.fontWeight = "600";
+    statusEl.style.textAlign = "center";
+    form.append(statusEl);
+  }
+  return statusEl;
+};
+
+/**
+ * Renders inline status messages near the form submit area.
+ * @param {HTMLFormElement} form - Target form
+ * @param {string} message - Message to display (empty to clear)
+ * @param {"success"|"error"|"info"} type - Visual style hint
+ */
+const renderFormStatus = (form, message, type = "info") => {
+  const statusEl = getOrCreateStatusEl(form);
+  statusEl.textContent = message;
+
+  const colorMap = {
+    success: "#37c978",
+    error: "#ff6b6b",
+    info: "#d9d7c7",
+  };
+  statusEl.style.color = colorMap[type] || colorMap.info;
+};
+
+/**
+ * Ensures phone number meets UK length (11 digits).
+ * @param {HTMLFormElement} form - Target form
+ * @returns {boolean} True if the phone number is complete
+ */
+const isPhoneComplete = (form) => {
+  const telInput = form.querySelector("#tel");
+  if (!telInput) return true; // If the field is absent, don't block submission
+  const digits = telInput.value.replace(/\D+/g, "");
+  return digits.length === 11;
+};
+
+/**
+ * Validates that at least one time slot or "No Preference" is selected.
+ * @returns {boolean} True if a selection exists, false otherwise.
+ */
+const hasTimeSlotSelection = () => {
+  const hasSpecificSlot = timeSlots.some((slot) => slot?.checked);
+  const hasNone = !!noneCheckbox?.checked;
+  return hasSpecificSlot || hasNone;
+};
+
+/**
  * ============================================================================
  * SECTION 2: DOM ELEMENT CACHE
  * ============================================================================
@@ -73,6 +155,37 @@ document.querySelectorAll("#enquiry-form").forEach((form) => {
     const submitBtn = form.querySelector("button[type='submit']");
     const originalText = submitBtn?.innerText || "Send";
 
+    // Normalize text inputs before validation (prevents trailing-space failures)
+    sanitizeTextInputs(form);
+
+    // Clear any previous status message
+    renderFormStatus(form, "", "info");
+
+    // Require complete UK phone number (11 digits)
+    if (!isPhoneComplete(form)) {
+      renderFormStatus(
+        form,
+        "Please enter your full phone number (11 digits).",
+        "error"
+      );
+      const telInput = form.querySelector("#tel");
+      if (telInput) telInput.focus();
+      return;
+    }
+
+    // Require at least one time slot or "No Preference"
+    if (!hasTimeSlotSelection()) {
+      renderFormStatus(
+        form,
+        "Please select at least one preferred time slot or choose No Preference.",
+        "error"
+      );
+      return;
+    }
+
+    // Browser validity check (blocks submit if any constraint fails)
+    if (!form.reportValidity()) return;
+
     // Display loading state
     if (submitBtn) {
       submitBtn.innerText = "Sending...";
@@ -89,12 +202,20 @@ document.querySelectorAll("#enquiry-form").forEach((form) => {
     )
       .then((response) => {
         if (!response.ok) throw new Error("Network response was not ok.");
-        alert("Thank you! Your message has been sent.");
+        renderFormStatus(
+          form,
+          "Thank you! Your message has been sent.",
+          "success"
+        );
         form.reset();
       })
       .catch((error) => {
         console.error("Error!", error.message);
-        alert("Something went wrong. Please try again later.");
+        renderFormStatus(
+          form,
+          "Something went wrong sending your message. Please try again.",
+          "error"
+        );
       })
       .finally(() => {
         // Restore button to original state
@@ -180,9 +301,10 @@ if (fullNameInput) {
 const catNumInput = document.getElementById("cat-num");
 if (catNumInput) {
   catNumInput.addEventListener("input", () => {
-    if (parseInt(catNumInput.value, 10) >= 99) {
-      catNumInput.value = "99";
-    }
+    const value = parseInt(catNumInput.value, 10);
+    if (Number.isNaN(value)) return;
+    if (value < 1) catNumInput.value = "1";
+    if (value >= 99) catNumInput.value = "99";
   });
 }
 
@@ -193,27 +315,41 @@ if (catNumInput) {
 const visitsPerDayInput = document.getElementById("visits-per-day");
 if (visitsPerDayInput) {
   visitsPerDayInput.addEventListener("input", () => {
-    if (parseInt(visitsPerDayInput.value, 10) > 3) {
-      visitsPerDayInput.value = "3";
-    }
+    const value = parseInt(visitsPerDayInput.value, 10);
+    if (Number.isNaN(value)) return;
+    if (value < 1) visitsPerDayInput.value = "1";
+    if (value > 3) visitsPerDayInput.value = "3";
   });
 }
 
 /**
  * Ensures phone number input is 12 characters and includes a space after first 5 characters (UK format) - id="tel"
+ *
  */
 
 const phoneInput = document.getElementById("tel");
 if (phoneInput) {
   phoneInput.addEventListener("input", () => {
-    let value = phoneInput.value.replace(/\s+/g, ""); // Remove existing spaces
-    if (value.length > 5) {
-      value = value.slice(0, 5) + " " + value.slice(5); // Insert space after first 5 characters
+    // Keep digits-only string, then format with a single space after 5 chars (UK style)
+    let digits = phoneInput.value.replace(/\D+/g, "");
+    if (digits.length > 11) digits = digits.slice(0, 11);
+
+    if (digits.length > 5) {
+      phoneInput.value = `${digits.slice(0, 5)} ${digits.slice(5)}`;
+    } else {
+      phoneInput.value = digits;
     }
-    if (value.length > 11) {
-      value = value.slice(0, 12); // Limit to 12 characters including space
+
+    // Set validity so submit can surface inline error when incomplete
+    if (digits.length === 0) {
+      phoneInput.setCustomValidity("");
+    } else if (digits.length < 11) {
+      phoneInput.setCustomValidity(
+        "Please enter your full phone number (11 digits)."
+      );
+    } else {
+      phoneInput.setCustomValidity("");
     }
-    phoneInput.value = value;
   });
 }
 
@@ -224,10 +360,14 @@ if (phoneInput) {
 const emailInput = document.getElementById("email");
 if (emailInput) {
   emailInput.addEventListener("input", () => {
-    const value = emailInput.value;
+    const value = emailInput.value.trim();
     if (value.endsWith("@")) {
-      emailInput.value = value + "gmail.com";
+      emailInput.value = `${value}gmail.com`;
+      return;
     }
+
+    // Prevent accidental trailing spaces which fail native email validation
+    emailInput.value = value;
   });
 }
 
