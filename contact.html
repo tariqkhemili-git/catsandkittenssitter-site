@@ -114,23 +114,27 @@
             </p>
           </div>
           <div class="about-container">
-            <form action="">
+            <form action="" id="enquiry-form">
               <div class="form-container">
                 <label for="full-name"
                   >Full name<span class="color-red margin-2px">*</span></label
                 ><input
                   type="text"
+                  name="full-name"
                   id="full-name"
                   class="input"
                   placeholder="Jane Doe"
+                  required
                 />
                 <label for="email"
                   >Email<span class="color-red margin-2px">*</span></label
                 ><input
                   type="email"
+                  name="email"
                   id="email"
                   class="input"
                   placeholder="janedoe@example.com"
+                  required
                 />
                 <label for="tel"
                   >Phone number<span class="color-red margin-2px"
@@ -138,6 +142,7 @@
                   ></label
                 ><input
                   type="tel"
+                  name="number"
                   id="tel"
                   class="input"
                   placeholder="+44 7459 903472"
@@ -150,6 +155,7 @@
                 >
                 <input
                   type="text"
+                  name="postcode"
                   id="postcode"
                   class="input"
                   placeholder="E14 5DL"
@@ -163,6 +169,7 @@
                 <input
                   type="number"
                   id="cat-num"
+                  name="number-of-cats"
                   class="input"
                   placeholder="1? 2? 3?"
                   required
@@ -170,11 +177,23 @@
                 <label for="start-date"
                   >Start Date<span class="color-red margin-2px">*</span></label
                 >
-                <input type="date" id="start-date" class="input" required />
+                <input
+                  type="date"
+                  id="start-date"
+                  class="input"
+                  name="start-date"
+                  required
+                />
                 <label for="end-date"
                   >End Date<span class="color-red margin-2px">*</span></label
                 >
-                <input type="date" id="end-date" class="input" required />
+                <input
+                  type="date"
+                  id="end-date"
+                  class="input"
+                  name="end-date"
+                  required
+                />
                 <label for="visits-per-day"
                   >Number of visits per day<span class="color-red margin-2px"
                     >*</span
@@ -184,39 +203,78 @@
                   type="number"
                   id="visits-per-day"
                   class="input"
+                  name="visits-per-day"
                   placeholder="1? 2? 3?"
                   required
                 />
-                <label for="time-slots">Preferred time slots</label>
+                <label for="none">Preferred time slots</label>
 
-                <div id="time-slots" class="checkbox-group">
+                <div class="checkbox-group">
                   <label
-                    ><input type="checkbox" value="morning" /> Morning</label
+                    ><input
+                      type="checkbox"
+                      name="time-slot"
+                      value="morning"
+                      class="only-no-preference"
+                      id="morning"
+                    />
+                    Morning</label
                   >
                   <label
-                    ><input type="checkbox" value="afternoon" />
+                    ><input
+                      type="checkbox"
+                      name="time-slot"
+                      value="afternoon"
+                      class="only-no-preference"
+                      id="afternoon"
+                    />
                     Afternoon</label
                   >
                   <label
-                    ><input type="checkbox" value="evening" /> Evening</label
+                    ><input
+                      type="checkbox"
+                      name="time-slot"
+                      value="evening"
+                      class="only-no-preference"
+                      id="evening"
+                    />
+                    Evening</label
                   >
                   <label
-                    ><input type="checkbox" value="none" /> No Preference</label
+                    ><input
+                      type="checkbox"
+                      name="time-slot"
+                      value="none"
+                      class="only-no-preference"
+                      id="none"
+                    />
+                    No Preference</label
                   >
                 </div>
-                <label for="visit-lengths"
+                <label
                   >Which visit length?<span class="color-red margin-2px"
                     >*</span
                   ></label
                 >
 
-                <div id="visit-lengths" class="checkbox-group">
-                  <label
-                    ><input type="checkbox" value="standard" required />
+                <div class="checkbox-group">
+                  <label for="standard"
+                    ><input
+                      type="radio"
+                      name="visit-length"
+                      value="standard"
+                      id="standard"
+                      required
+                    />
                     Standard visit - 20-25 mins</label
                   >
                   <label
-                    ><input type="checkbox" value="extended" required />
+                    ><input
+                      type="radio"
+                      name="visit-length"
+                      value="extended"
+                      required
+                    />
                     Extended visit - 40-45 mins</label
                   >
                 </div>
@@ -230,7 +288,13 @@
                   >How did you hear about me?<span class="color-red margin-2px"
                     >*</span
                   ></label
-                ><input type="text" id="how-hear" class="input" />
+                ><input
+                  type="text"
+                  id="how-hear"
+                  name="how-did-you-hear-about-me"
+                  class="input"
+                  required
+                />
 
                 <button type="submit" class="submit">Submit</button>
               </div>
