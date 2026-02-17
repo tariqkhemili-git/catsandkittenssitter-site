@@ -397,7 +397,7 @@ const emailInput = document.getElementById("email");
 if (emailInput) {
     emailInput.addEventListener("input", () => {
         const value = emailInput.value.trim();
-        if (value.endsWith("@")) {
+        if (value.endsWith("@g")) {
             emailInput.value = `${value}gmail.com`;
             return;
         }
