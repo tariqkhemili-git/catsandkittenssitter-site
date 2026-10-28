@@ -1,335 +1,260 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
-      rel="stylesheet"
-    />
-    <script type="module" src="script.js"></script>
-    <title>
-      Book a London Cat Sitter: Enquiry Form - Cats and Kittens Sitter
-    </title>
-    <link rel="icon" href="assets/favicon.webp" />
-  </head>
-  <body>
-    <div class="nav-container">
-      <nav>
-        <button class="hamburger" id="hamburger">&#9776;</button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet" />
+        <script type="module" src="script.js"></script>
+        <title>Book a London Cat Sitter: Enquiry Form - Cats and Kittens Sitter</title>
+        <link rel="icon" href="assets/favicon.webp" />
+    </head>
+    <body>
+        <div class="nav-container">
+            <nav>
+                <button class="hamburger" id="hamburger">&#9776;</button>
 
-        <div id="hamburger-menu" class="hamburger-menu display-none-hamburger">
-          <a href="about.html" class="hamburger-item">About</a>
-          <a href="services&pricing.html" class="hamburger-item"
-            >Services & Pricing</a
-          >
-          <a href="contact.html" class="hamburger-item">Contact</a>
-          <a href="new-to-cat-sitting.html" class="hamburger-item"
-            >New to Cat Sitting?</a
-          >
-          <a href="service-policies-booking-terms.html" class="hamburger-item"
-            >Policies & Booking Terms</a
-          >
-          <a href="faqs.html" class="hamburger-item">FAQs</a>
-        </div>
-
-        <a href="index.html">
-          <img src="assets/logo-blog.png" alt="Cats and Kittens Sitter Logo" />
-        </a>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services&pricing.html">Services & Pricing</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="new-to-cat-sitting.html">New to Cat Sitting?</a></li>
-          <li>
-            <a href="service-policies-booking-terms.html"
-              >Policies & Booking Terms</a
-            >
-          </li>
-          <li><a href="faqs.html">FAQs</a></li>
-        </ul>
-        <a class="get-in-touch-btn display-none" href="contact.html"
-          >Get In Touch</a
-        >
-      </nav>
-    </div>
-    <div class="not-inverse">
-      <section>
-        <div class="grid-2">
-          <div>
-            <h1 class="about-h1">Book a London Cat Sitter</h1>
-            <h1 class="enquiry-form-h1">Enquiry Form</h1>
-            <p class="padding-bottom">
-              Hi there! I offer drop-in cat sitting visits across London. To
-              book a cat sitting service, just fill out the form below with your
-              cat's details, and I'll aim to get back to you within 24 hours to
-              confirm availability and next steps.
-            </p>
-            <p class="padding-bottom">
-              I mainly use my number for WhatsApp, so feel free to drop me a
-              message there. If you'd prefer to talk on the phone, we can always
-              schedule a call, whatever works best for you!
-            </p>
-            <a
-              class="whatsapp-btn margin-bottom"
-              href="https://api.whatsapp.com/send?phone=447459903472&text=Hi!%20I%20got%20your%20number%20from%20your%20website%20and%20I%E2%80%99m%20interested%20in%20booking%20cat%20sitting%20with%20you."
-            >
-              <img
-                src="assets/whatsapp.svg"
-                alt="WhatsApp Logo"
-                class="whatsapp-img"
-              />
-              Chat on Whatsapp
-            </a>
-            <p class="padding-bottom-1">
-              Email:
-              <a href="mailto:catsandkittenssitter@gmail.com" target="_blank"
-                >catsandkittenssitter@gmail.com</a
-              >
-            </p>
-            <p class="padding-bottom-1">
-              TikTok:
-              <a href="https://www.tiktok.com/@eastldncatsitter" target="_blank"
-                >@eastldncatsitter</a
-              >
-            </p>
-            <p class="padding-bottom-1">
-              Instagram:
-              <a
-                href="https://www.instagram.com/eastldncatsitter/"
-                target="_blank"
-                >@eastldncatsitter</a
-              >
-            </p>
-            <p class="not-for-job-app padding-bottom-1">
-              (Please note: this form is <span>NOT</span> for job applications.)
-            </p>
-            <p>
-              Unsure of your travel dates or just want to have a quick chat
-              first? I'm always happy to hear from fellow cat parents, message
-              me directly on WhatsApp or reach out on email or socials.
-            </p>
-          </div>
-          <div class="about-container">
-            <form action="" id="enquiry-form">
-              <div class="form-container">
-                <label for="full-name"
-                  >Full name<span class="color-red margin-2px">*</span></label
-                ><input
-                  type="text"
-                  name="full-name"
-                  id="full-name"
-                  class="input"
-                  placeholder="Jane Doe"
-                  required
-                />
-                <label for="email"
-                  >Email<span class="color-red margin-2px">*</span></label
-                ><input
-                  type="email"
-                  name="email"
-                  id="email"
-                  class="input"
-                  placeholder="janedoe@example.com"
-                  required
-                />
-                <label for="tel"
-                  >Phone number<span class="color-red margin-2px"
-                    >*</span
-                  ></label
-                ><input
-                  type="tel"
-                  name="number"
-                  id="tel"
-                  class="input"
-                  placeholder="+44 7459 903472"
-                  required
-                />
-                <label for="postcode"
-                  >Full Postcode<span class="color-red margin-2px"
-                    >*</span
-                  ></label
-                >
-                <input
-                  type="text"
-                  name="postcode"
-                  id="postcode"
-                  class="input"
-                  placeholder="E14 5DL"
-                  required
-                />
-                <label for="cat-num"
-                  >Number of Cats<span class="color-red margin-2px"
-                    >*</span
-                  ></label
-                >
-                <input
-                  type="number"
-                  id="cat-num"
-                  name="number-of-cats"
-                  class="input"
-                  placeholder="1? 2? 3?"
-                  required
-                />
-                <label for="start-date"
-                  >Start Date<span class="color-red margin-2px">*</span></label
-                >
-                <input
-                  type="date"
-                  id="start-date"
-                  class="input"
-                  name="start-date"
-                  required
-                />
-                <label for="end-date"
-                  >End Date<span class="color-red margin-2px">*</span></label
-                >
-                <input
-                  type="date"
-                  id="end-date"
-                  class="input"
-                  name="end-date"
-                  required
-                />
-                <label for="visits-per-day"
-                  >Number of visits per day<span class="color-red margin-2px"
-                    >*</span
-                  ></label
-                >
-                <input
-                  type="number"
-                  id="visits-per-day"
-                  class="input"
-                  name="visits-per-day"
-                  placeholder="1? 2? 3?"
-                  required
-                />
-                <label for="none">Preferred time slots</label>
-
-                <div class="checkbox-group" style="margin-left: 5px">
-                  <label
-                    ><input
-                      type="checkbox"
-                      name="time-slot"
-                      value="morning"
-                      class="only-no-preference"
-                      id="morning"
-                    />
-                    Morning</label
-                  >
-                  <label
-                    ><input
-                      type="checkbox"
-                      name="time-slot"
-                      value="afternoon"
-                      class="only-no-preference"
-                      id="afternoon"
-                    />
-                    Afternoon</label
-                  >
-                  <label
-                    ><input
-                      type="checkbox"
-                      name="time-slot"
-                      value="evening"
-                      class="only-no-preference"
-                      id="evening"
-                    />
-                    Evening</label
-                  >
-                  <label
-                    ><input
-                      type="checkbox"
-                      name="time-slot"
-                      value="none"
-                      class="only-no-preference"
-                      id="none"
-                    />
-                    No Preference</label
-                  >
+                <div id="hamburger-menu" class="hamburger-menu display-none-hamburger">
+                    <a href="about.html" class="hamburger-item">About</a>
+                    <a href="services&pricing.html" class="hamburger-item">Services & Pricing</a>
+                    <a href="contact.html" class="hamburger-item">Contact</a>
+                    <a href="new-to-cat-sitting.html" class="hamburger-item">New to Cat Sitting?</a>
+                    <a href="service-policies-booking-terms.html" class="hamburger-item">Policies & Booking Terms</a>
+                    <a href="faqs.html" class="hamburger-item">FAQs</a>
                 </div>
-                <label
-                  >Which visit length?<span class="color-red margin-2px"
-                    >*</span
-                  ></label
-                >
 
-                <div class="checkbox-group" style="margin-left: 0">
-                  <label for="standard"
-                    ><input
-                      type="radio"
-                      name="visit-length"
-                      value="standard"
-                      id="standard"
-                      required
-                    />
-                    Standard visit - 20-25 mins</label
-                  >
-                  <label
-                    ><input
-                      type="radio"
-                      name="visit-length"
-                      value="extended"
-                      required
-                    />
-                    Extended visit - 40-45 mins</label
-                  >
-                </div>
-                <label for="message">Message</label>
-                <textarea
-                  name="message"
-                  id="message"
-                  class="input message-input"
-                ></textarea>
-                <label for="how-hear"
-                  >How did you hear about me?<span class="color-red margin-2px"
-                    >*</span
-                  ></label
-                ><input
-                  type="text"
-                  id="how-hear"
-                  name="how-did-you-hear-about-me"
-                  class="input"
-                  required
-                />
-
-                <button type="submit" class="submit">Submit</button>
-              </div>
-            </form>
-          </div>
+                <a href="index.html">
+                    <img src="assets/logo-blog.png" alt="Cats and Kittens Sitter Logo" />
+                </a>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services&pricing.html">Services & Pricing</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="new-to-cat-sitting.html">New to Cat Sitting?</a></li>
+                    <li>
+                        <a href="service-policies-booking-terms.html">Policies & Booking Terms</a>
+                    </li>
+                    <li><a href="faqs.html">FAQs</a></li>
+                </ul>
+                <a class="get-in-touch-btn display-none" href="contact.html">Get In Touch</a>
+            </nav>
         </div>
-      </section>
-    </div>
-    <footer>
-      <div class="nav-container">
-        <nav>
-          <button class="hamburger">&#9776;</button>
-          <a href="index.html"
-            ><img src="assets/logo-blog.png" alt="Cats and Kittens Sitter Logo"
-          /></a>
-          <p>© 2025 CatsAndKittensSitter. All rights reserved.</p>
-          <ul>
-            <li><a href="about.html">About</a></li>
-            <li>
-              <a href="services&pricing.html">Services & Pricing</a>
-            </li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="new-to-cat-sitting.html">New to Cat Sitting?</a></li>
-            <li>
-              <a href="service-policies-booking-terms.html"
-                >Policies & Booking Terms</a
-              >
-            </li>
-            <li><a href="faqs.html">FAQs</a></li>
-          </ul>
-          <a class="get-in-touch-btn display-none" href="contact.html"
-            >Get In Touch</a
-          >
-        </nav>
-      </div>
-    </footer>
-  </body>
+        <div class="not-inverse">
+            <section>
+                <div class="grid-2">
+                    <div>
+                        <h1 class="about-h1">Book a London Cat Sitter</h1>
+                        <h1 class="enquiry-form-h1">Enquiry Form</h1>
+                        <p class="padding-bottom">
+                            Hi there! I offer drop-in cat sitting visits across London. To book a cat sitting service,
+                            just fill out the form below with your cat's details, and I'll aim to get back to you within
+                            24 hours to confirm availability and next steps.
+                        </p>
+                        <p class="padding-bottom">
+                            I mainly use my number for WhatsApp, so feel free to drop me a message there. If you'd
+                            prefer to talk on the phone, we can always schedule a call, whatever works best for you!
+                        </p>
+                        <a
+                            class="whatsapp-btn margin-bottom"
+                            href="https://api.whatsapp.com/send?phone=447459903472&text=Hi!%20I%20got%20your%20number%20from%20your%20website%20and%20I%E2%80%99m%20interested%20in%20booking%20cat%20sitting%20with%20you."
+                        >
+                            <img src="assets/whatsapp.svg" alt="WhatsApp Logo" class="whatsapp-img" />
+                            Chat on Whatsapp
+                        </a>
+                        <p class="padding-bottom-1">
+                            Email:
+                            <a href="mailto:catsandkittenssitter@gmail.com" target="_blank"
+                                >catsandkittenssitter@gmail.com</a
+                            >
+                        </p>
+                        <p class="padding-bottom-1">
+                            TikTok:
+                            <a href="https://www.tiktok.com/@catsandkittenssitter" target="_blank"
+                                >@catsandkittenssitter</a
+                            >
+                        </p>
+                        <p class="padding-bottom-1">
+                            Instagram:
+                            <a href="https://www.instagram.com/catsandkittenssitter/" target="_blank"
+                                >@catsandkittenssitter</a
+                            >
+                        </p>
+                        <p class="not-for-job-app padding-bottom-1">
+                            (Please note: this form is <span>NOT</span> for job applications.)
+                        </p>
+                        <p>
+                            Unsure of your travel dates or just want to have a quick chat first? I'm always happy to
+                            hear from fellow cat parents, message me directly on WhatsApp or reach out on email or
+                            socials.
+                        </p>
+                    </div>
+                    <div class="about-container">
+                        <form action="" id="enquiry-form">
+                            <div class="form-container">
+                                <label for="full-name">Full name<span class="color-red margin-2px">*</span></label
+                                ><input
+                                    type="text"
+                                    name="full-name"
+                                    id="full-name"
+                                    class="input"
+                                    placeholder="Jane Doe"
+                                    required
+                                />
+                                <label for="email">Email<span class="color-red margin-2px">*</span></label
+                                ><input
+                                    type="email"
+                                    name="email"
+                                    id="email"
+                                    class="input"
+                                    placeholder="janedoe@example.com"
+                                    required
+                                />
+                                <label for="tel">Phone number<span class="color-red margin-2px">*</span></label
+                                ><input
+                                    type="tel"
+                                    name="number"
+                                    id="tel"
+                                    class="input"
+                                    placeholder="+44 7459 903472"
+                                    required
+                                />
+                                <label for="postcode">Full Postcode<span class="color-red margin-2px">*</span></label>
+                                <input
+                                    type="text"
+                                    name="postcode"
+                                    id="postcode"
+                                    class="input"
+                                    placeholder="E14 5DL"
+                                    required
+                                />
+                                <label for="cat-num">Number of Cats<span class="color-red margin-2px">*</span></label>
+                                <input
+                                    type="number"
+                                    id="cat-num"
+                                    name="number-of-cats"
+                                    class="input"
+                                    placeholder="1? 2? 3?"
+                                    required
+                                />
+                                <label for="start-date">Start Date<span class="color-red margin-2px">*</span></label>
+                                <input type="date" id="start-date" class="input" name="start-date" required />
+                                <label for="end-date">End Date<span class="color-red margin-2px">*</span></label>
+                                <input type="date" id="end-date" class="input" name="end-date" required />
+                                <label for="visits-per-day"
+                                    >Number of visits per day<span class="color-red margin-2px">*</span></label
+                                >
+                                <input
+                                    type="number"
+                                    id="visits-per-day"
+                                    class="input"
+                                    name="visits-per-day"
+                                    placeholder="1? 2? 3?"
+                                    required
+                                />
+                                <label for="none">Preferred time slots</label>
+
+                                <div class="checkbox-group" style="margin-left: 5px">
+                                    <label
+                                        ><input
+                                            type="checkbox"
+                                            name="time-slot"
+                                            value="morning"
+                                            class="only-no-preference"
+                                            id="morning"
+                                        />
+                                        Morning</label
+                                    >
+                                    <label
+                                        ><input
+                                            type="checkbox"
+                                            name="time-slot"
+                                            value="afternoon"
+                                            class="only-no-preference"
+                                            id="afternoon"
+                                        />
+                                        Afternoon</label
+                                    >
+                                    <label
+                                        ><input
+                                            type="checkbox"
+                                            name="time-slot"
+                                            value="evening"
+                                            class="only-no-preference"
+                                            id="evening"
+                                        />
+                                        Evening</label
+                                    >
+                                    <label
+                                        ><input
+                                            type="checkbox"
+                                            name="time-slot"
+                                            value="none"
+                                            class="only-no-preference"
+                                            id="none"
+                                        />
+                                        No Preference</label
+                                    >
+                                </div>
+                                <label>Which visit length?<span class="color-red margin-2px">*</span></label>
+
+                                <div class="checkbox-group" style="margin-left: 0">
+                                    <label for="standard"
+                                        ><input
+                                            type="radio"
+                                            name="visit-length"
+                                            value="standard"
+                                            id="standard"
+                                            required
+                                        />
+                                        Standard visit - 20-25 mins</label
+                                    >
+                                    <label
+                                        ><input type="radio" name="visit-length" value="extended" required /> Extended
+                                        visit - 40-45 mins</label
+                                    >
+                                </div>
+                                <label for="message">Message</label>
+                                <textarea name="message" id="message" class="input message-input"></textarea>
+                                <label for="how-hear"
+                                    >How did you hear about me?<span class="color-red margin-2px">*</span></label
+                                ><input
+                                    type="text"
+                                    id="how-hear"
+                                    name="how-did-you-hear-about-me"
+                                    class="input"
+                                    required
+                                />
+
+                                <button type="submit" class="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer>
+            <div class="nav-container">
+                <nav>
+                    <button class="hamburger">&#9776;</button>
+                    <a href="index.html"><img src="assets/logo-blog.png" alt="Cats and Kittens Sitter Logo" /></a>
+                    <p>© 2025 CatsAndKittensSitter. All rights reserved.</p>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li>
+                            <a href="services&pricing.html">Services & Pricing</a>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="new-to-cat-sitting.html">New to Cat Sitting?</a></li>
+                        <li>
+                            <a href="service-policies-booking-terms.html">Policies & Booking Terms</a>
+                        </li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                    </ul>
+                    <a class="get-in-touch-btn display-none" href="contact.html">Get In Touch</a>
+                </nav>
+            </div>
+        </footer>
+    </body>
 </html>
