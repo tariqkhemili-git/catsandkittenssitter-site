@@ -473,12 +473,16 @@ timeSlotCheckboxes.forEach(checkbox => {
 });
 
 // Handle "No Preference" checkbox selection
-noneCheckbox.addEventListener("change", function () {
-    if (this.checked) {
-        // Clear all time slot selections when "No Preference" is chosen
-        timeSlots.forEach(slot => (slot.checked = false));
-    }
-});
+if (noneCheckbox) {
+    noneCheckbox.addEventListener("change", function () {
+        if (this.checked) {
+            // Clear all time slot selections when "No Preference" is chosen
+            timeSlots.forEach(slot => {
+                if (slot) slot.checked = false;
+            });
+        }
+    });
+}
 
 /**
  * ============================================================================
