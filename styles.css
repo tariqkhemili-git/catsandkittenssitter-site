@@ -1,7 +1,7 @@
 :root {
     /* --- Brand & Text Colors --- */
     --color-accent-cream: #ded9ce;
-    --color-accent-cream-dark: #ffffff;
+    --color-accent-cream-dark: #ded9cecc;
     --color-accent-cream-darker: #5b573e;
     --color-accent-blue: #788287;
     --color-text-beige: #d9d7c7;
@@ -780,4 +780,61 @@ details details {
     visibility: hidden;
     position: absolute;
     opacity: 0;
+}
+
+.cmm-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2em 1em;
+}
+
+.cmm-apply {
+    padding: 1em 2em;
+    margin: 2em;
+    border-radius: 10px;
+    background-color: var(--color-accent-cream);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    font-family: "Sora", sans-serif;
+    font-size: 1rem;
+}
+
+.cmm-apply:hover,
+.cmm-apply:active,
+.cmm-apply:focus {
+    background-color: var(--color-accent-cream-dark);
+}
+
+/* --- Social Media Embeds --- */
+.social-embed-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2em auto;
+    width: 100%;
+    padding: 0 1em;
+}
+
+.tiktok-embed,
+.instagram-media {
+    border-radius: 20px !important;
+    box-shadow: var(--color-text-beige) 0 0 10px !important;
+    background-color: var(--color-bg-nav) !important;
+    margin: 0 auto !important;
+    border: none !important;
+}
+
+.instagram-media {
+    max-width: 540px !important;
+    min-width: 326px !important;
+    width: calc(100% - 2px) !important;
+}
+
+.tiktok-embed {
+    max-width: 780px !important;
+    min-width: 288px !important;
 }
